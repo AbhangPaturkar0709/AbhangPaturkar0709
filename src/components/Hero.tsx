@@ -68,7 +68,7 @@ const Hero = () => {
               </Button>
               <Button
                 className="px-6 py-2 h-auto"
-                onClick={() => window.open('/AbhangPaturkarResume.pdf', '_blank')}
+                onClick={() => window.open(`${import.meta.env.BASE_URL}AbhangPaturkarResume.pdf`, '_blank')}
               >
                 <Download size={14} className="mr-2" />
                 Download Resume
@@ -98,7 +98,7 @@ const Hero = () => {
   <div className="relative group">
     <div className="w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-xl border-4 border-primary/30 hover:shadow-2xl hover:border-primary/50 transition-all duration-300">
       <img
-        src="/avatar.jpg"
+        src={`${import.meta.env.BASE_URL}avatar.jpg`}
         alt="Abhang Paturkar"
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         loading="eager"
