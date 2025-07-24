@@ -146,18 +146,11 @@ const Projects = () => {
   return (
     <section id="projects" className="relative py-20 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
+        <div className=" items-center mb-8">
           <h2 className="heading-compact-lg text-center fade-in">
             Featured Projects
           </h2>
-          <div className="hidden md:flex gap-2">
-            <Button variant="ghost" size="icon" onClick={() => scroll("left")}>
-              <ChevronLeft />
-            </Button>
-            <Button variant="ghost" size="icon" onClick={() => scroll("right")}>
-              <ChevronRight />
-            </Button>
-          </div>
+          
         </div>
 
         {/* Scrollable Cards */}
@@ -257,7 +250,7 @@ const Projects = () => {
         </div>
 
         {/* Mobile scroll buttons */}
-        <div className="flex justify-center gap-4 mt-6 md:hidden">
+        <div className="flex justify-center gap-4 mt-6 ">
           <Button variant="outline" onClick={() => scroll("left")}>
             ←
           </Button>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Code2,
   Database,
@@ -254,41 +254,48 @@ export const Skills = () => {
         </header>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-3">
-          {skillCategories.map((cat) => (
-            <button
-              key={cat.title}
-              onClick={() => setActiveTab(cat.title)}
-              className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition ${
-                activeTab === cat.title
-                  ? "bg-primary text-white shadow"
-                  : "bg-muted text-muted-foreground hover:bg-primary/10"
-              }`}
-            >
-              <cat.icon className="w-4 h-4" />
-              {cat.title}
-            </button>
-          ))}
-        </div>
+<div className="flex flex-wrap justify-center gap-3">
+  {skillCategories.map((cat) => (
+    <button
+      key={cat.title}
+      onClick={() => setActiveTab(cat.title)}
+      className={`flex items-center gap-2 px-4 py-2 max-[400px]:px-2 max-[400px]:py-1 text-sm max-[400px]:text-xs font-medium rounded-full transition ${
+        activeTab === cat.title
+          ? "bg-primary text-white shadow"
+          : "bg-muted text-muted-foreground hover:bg-primary/10"
+      }`}
+    >
+      <cat.icon className="w-4 h-4 max-[400px]:w-3 max-[400px]:h-3" />
+      {cat.title}
+    </button>
+  ))}
+</div>
+
 
         {/* Skills Grid */}
-        <div className="flex flex-wrap justify-center gap-4">
+<div className="flex flex-wrap justify-center gap-4">
   {activeCategory?.skills.map((skill) => (
     <div
       key={skill.name}
-      className="w-40 group relative flex flex-col items-center justify-center rounded-lg border p-4 text-center shadow-sm bg-card hover:shadow-md"
+      className="w-40 max-[400px]:w-28 group relative flex flex-col items-center justify-center rounded-lg border p-4 max-[400px]:p-2 text-center shadow-sm bg-card hover:shadow-md"
     >
-      <div className="mb-2">{skill.icon}</div>
-      <span className="text-sm font-medium">{skill.name}</span>
+      <div className="mb-2 max-[400px]:mb-1">
+        {React.cloneElement(skill.icon, {
+          className: `${skill.icon.props.className} max-[400px]:w-4 max-[400px]:h-4`,
+        })}
+      </div>
+      <span className="text-sm max-[400px]:text-xs font-medium">{skill.name}</span>
 
       {/* Tooltip */}
-      <div className="absolute z-10 bottom-full left-1/2 mb-2 hidden w-40 -translate-x-1/2 rounded bg-popover px-2 py-1 text-xs text-muted-foreground shadow-md group-hover:block">
+      <div className="absolute z-10 bottom-full left-1/2 mb-2 hidden w-40 max-[400px]:w-28 -translate-x-1/2 rounded bg-popover px-2 py-1 text-xs text-muted-foreground shadow-md group-hover:block">
         {skill.description}
         <div className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-t-popover border-transparent" />
       </div>
     </div>
   ))}
 </div>
+
+
 
       </div>
     </section>
