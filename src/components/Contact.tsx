@@ -100,17 +100,17 @@ const Contact = () => {
 
               <div className="flex items-center space-x-4">
                 {socialLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 rounded-lg bg-secondary/50 hover:bg-secondary transition-all duration-200 ${link.color} hover-lift`}
-                    aria-label={link.label}
-                  >
-                    {link.icon}
-                  </a>
-                ))}
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-2 rounded-lg bg-secondary/50 hover:bg-secondary transition-all duration-200 ${link.color} hover-lift`}
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </a>
+              ))}
               </div>
             </div>
           </div>
