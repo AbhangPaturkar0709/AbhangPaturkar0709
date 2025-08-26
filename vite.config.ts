@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: './', // 👈 REQUIRED for GitHub Pages
+  base: "/AbhangPaturkar0709/",  
   server: {
     host: "::",
     port: 8080,
