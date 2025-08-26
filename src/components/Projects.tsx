@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Marquee from "react-fast-marquee";
 import { useRef } from "react";
-import { SiBootstrap, SiCss3, SiDjango, SiHtml5, SiMongodb, SiMysql, SiPhp, SiReact, SiSpringboot, SiTailwindcss } from "react-icons/si";
+import { SiBootstrap, SiCss3, SiDjango, SiExpress, SiHtml5, SiMongodb, SiMysql, SiNodedotjs, SiOpenai, SiPhp, SiReact, SiSpringboot, SiTailwindcss } from "react-icons/si";
 
 const Projects = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -49,23 +49,25 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Short Link - URL Shortener",
-      stack: ["React", "Spring Boot", "MongoDB"],
+      title: "AI Meeting Summarizer",
+      image: "meetsummerizer.png",
+      stack: ["React", "Node.js", "Express", "OpenAI API", "MongoDB"],
       description:
-        "A secure and customizable URL shortener supporting aliasing, link expiry, QR generation, and analytics.",
+        "AI-powered app to upload meeting transcripts, generate summaries from custom prompts, edit them, and share via email.",
       features: [
-        "Custom aliases and expiration for short links",
-        "Detailed click analytics and QR code generation",
-        "JWT-based user authentication and authorization",
-        "CORS and Spring Security configuration for secure access",
+        "Upload or paste meeting transcripts",
+        "Provide custom prompt to control summary style",
+        "Edit generated summary in-place before sharing",
+        "Share final summaries via email to multiple recipients",
+        "Simple, functional frontend focused on usability"
       ],
-      liveDemo: "https://shortlink-xdxw.onrender.com/",
-      github:
-        "https://github.com/AbhangPaturkar2023BIT508/UrlShortener-frontend",
-      color: "from-blue-500/20 to-purple-500/20",
+      liveDemo: "https://meetings-summarizer.onrender.com/", // replace with deployed URL
+      github: "https://github.com/AbhangPaturkar0709/meetings-summarizer", // replace with repo link
+      color: "from-purple-500/20 to-indigo-500/20"
     },
     {
       title: "Job Portal Web App",
+      image: "jobportal.png",
       stack: ["React", "Tailwind", "Spring Boot", "MongoDB"],
       description:
         "A full-stack job portal with role-based features for job seekers, recruiters, and admins.",
@@ -97,6 +99,7 @@ const Projects = () => {
     },
     {
       title: "Brand Page React App",
+      image: "brandpage.png",
       stack: ["React", "Hooks", "CSS"],
       description:
         "A responsive brand showcase web page created as a beginner project to learn React fundamentals and component structure.",
@@ -128,10 +131,13 @@ const Projects = () => {
         "https://github.com/AbhangPaturkar0709/Magazine_management_system",
       color: "from-orange-500/20 to-red-500/20",
     },
+    
   ];
 
   const techIcons = {
     React: <SiReact size={16} />,
+    "Node.js" : <SiNodedotjs size={16} />,
+    Express : <SiExpress size={16} />,
     "Spring Boot": <SiSpringboot size={16} />,
     MongoDB: <SiMongodb size={16} />,
     Tailwind: <SiTailwindcss size={16} />,
@@ -141,6 +147,7 @@ const Projects = () => {
     Django: <SiDjango size={16} />,
     HTML: <SiHtml5 size={16} />,
     CSS: <SiCss3 size={16} />,
+    "OpenAI API" : <SiOpenai size={16}/>
   };
 
   return (
@@ -169,11 +176,18 @@ const Projects = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="card-compact h-full">
-                <div
-                  className={`h-32 rounded-lg bg-gradient-to-br ${project.color} mb-4 flex items-center justify-center`}
-                >
-                  <Globe size={32} className="text-primary" />
+                <div className="h-32 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                  {project.image ? (
+                    <img
+                      src={`${import.meta.env.BASE_URL + project.image}`}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <Globe size={32} className="text-primary" />
+                  )}
                 </div>
+
 
                 <div className="space-y-4">
                   <div>
