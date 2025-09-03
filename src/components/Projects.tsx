@@ -72,12 +72,12 @@ const Projects = () => {
       description:
         "A secure fullstack URL shortening app with custom short codes, link analytics, QR code generation, and user authentication.",
       features: [
-        "Custom short codes with activation scheduling and expiry handling",
-        "Link analytics with click counts and QR code generation",
-        "User authentication with personalized link management",
-        "Responsive UI with pagination and filtering using Mantine",
-        "REST APIs with Spring Boot and MongoDB for efficient data handling",
-        "Deployed on Render with CORS-safe integration and mobile responsiveness",
+        "Custom short codes with expiry",
+        "Click analytics & QR codes",
+        "User authentication & personal links",
+        "Responsive UI with filtering & pagination",
+        "REST API with Spring Boot & MongoDB",
+        "Deployed on Render, mobile-friendly",
       ],
       liveDemo: "https://shortlink-xdxw.onrender.com/",
       github: "https://github.com/AbhangPaturkar2023BIT508/UrlShortener-frontend",
