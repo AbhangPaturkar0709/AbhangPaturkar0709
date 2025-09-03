@@ -66,6 +66,24 @@ const Projects = () => {
       color: "from-purple-500/20 to-indigo-500/20"
     },
     {
+      title: "ShortLink - URL Shortener",
+      image: "shortlink.png",
+      stack: ["React", "Spring Boot", "MongoDB", "Mantine UI"],
+      description:
+        "A secure fullstack URL shortening app with custom short codes, link analytics, QR code generation, and user authentication.",
+      features: [
+        "Custom short codes with activation scheduling and expiry handling",
+        "Link analytics with click counts and QR code generation",
+        "User authentication with personalized link management",
+        "Responsive UI with pagination and filtering using Mantine",
+        "REST APIs with Spring Boot and MongoDB for efficient data handling",
+        "Deployed on Render with CORS-safe integration and mobile responsiveness",
+      ],
+      liveDemo: "https://shortlink-xdxw.onrender.com/",
+      github: "https://github.com/AbhangPaturkar2023BIT508/UrlShortener-frontend",
+      color: "from-purple-500/20 to-indigo-500/20",
+    },
+    {
       title: "Job Portal Web App",
       image: "jobportal.png",
       stack: ["React", "Tailwind", "Spring Boot", "MongoDB"],
